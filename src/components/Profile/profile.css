@@ -1,0 +1,43 @@
+/* .main-profile {
+    display: flex;
+    flex-direction: row;
+} */
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                0 1px 2px 0 rgba(0, 0 ,0, 0.2);
+    padding: 0 10%;
+    margin: 0 20%;
+
+}
+.button-container  {
+    justify-content: right;
+    border-radius: 4px;
+    border-color: red;
+    border: 5px solid transparent;
+    margin: 0 20%;
+    width: auto;
+    position: absolute;
+
+}
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                0 1px 2px 0 rgba(0, 0 ,0, 0.2);
+    padding: 5% 10%;
+    margin: 0 20%;
+    margin-top: 20px;
+}
+.left-body {
+    width: 
+}
+.button-div {
+    flex-direction: row;
+    justify-content: right;
+}

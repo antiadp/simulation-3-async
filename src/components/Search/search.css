@@ -1,0 +1,111 @@
+.search_container {
+    height: auto;
+    display: block;
+}
+
+.search_parent {
+    min-height: 800px;
+    height: auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.search_child {
+    width: 841px;
+    min-height: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.child_top {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+}
+
+.child_bottom {
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+    background-color: white;
+}
+
+.select {
+    width: 125px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 350;
+    font-size: 20px;
+
+}
+
+.input {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.search {
+    width: 100px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 15px;
+    width: 130px;
+    margin-bottom:10px;
+}
+
+.complete {
+    width: 100px;
+    font-size: 14px;
+    margin-right: 20px;
+    font-size: 15px;
+    width: 130px;
+    margin-bottom:10px;
+}
+
+.profile_content {
+    width: 390px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: white;
+}
+
+.friend_name {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+}
+
+.pages_div {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.numbers_div {
+    background-image: linear-gradient(97deg, #ff7a6e, #ff9770);
+    width: 80%;
+    height: 100%;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

@@ -1,0 +1,174 @@
+.dash_parent_container {
+    width: 100%;
+    min-width: 1200px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .dash_child_container {
+     width: 80%;
+     min-width: 1000px;
+     display: block;
+ }
+ 
+ .dash_child_top {
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .user_box {
+     width: 321px;
+     height: 150px;
+     margin: 0;
+     background-color: #fff;
+     border-radius: 2px;
+     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2);
+     display: flex;
+ }
+ 
+ .user_left {
+     width: 150px;
+     height: 100%;
+     box-sizing: border-box;
+     padding: 10px;
+ }
+ 
+ .user_image {
+     border: 3px solid #FF9770;
+     width: 123px;
+ }
+ 
+ .user_right {
+     width: calc(100%-150px);
+     height: 100%;
+     box-sizing: border-box;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ 
+ .usr_first {
+     display: block;
+     margin-bottom: 8px;
+     font-size: 24px;
+ }
+ 
+ .usr_last {
+     display: block;
+     margin-bottom: 8px;
+     font-size: 24px;
+ }
+ 
+ .edit_button {
+     width: 150px;
+     font-size: 16px;
+ }
+ 
+ .dash_board {
+     width: 500px;
+     height: 150px;
+     display: flex;
+     margin-left: 20px;
+     box-sizing: border-box;
+     padding: 15px;
+     background-color: white;
+ }
+ 
+ .dash_recommend_parent {
+     width: 100%;
+     height: auto;
+     min-height: 200px;
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 50px;
+     background-color: white;
+ }
+ 
+ .dash_recommend_child {
+     width: 841px;
+ }
+ 
+ .dash_recommend_header {
+     width: 100%;
+     height: 50px;
+     box-sizing: border-box;
+     padding: 10px;
+     display: flex;
+     align-items: center;
+     position: relative;
+ }
+ 
+ .recommend_span_h {
+     font-size: 25px;
+ }
+ 
+ .recommend_span_s {
+     position: absolute;
+     right: 148px;
+ }
+ 
+ .dash_select {
+     position: absolute;
+     right: 10px;
+     font-size: 18px;
+     width: 130px;
+ }
+ 
+ .dash_rec_usr_p {
+     box-sizing: border-box;
+     padding: 10px;
+     height: 600px;
+     width: 100%;
+     display: block;
+ }
+ 
+ .dash_rec_usr_c {
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     
+ }
+ 
+ .rec_content {
+     width: 390px;
+     height: 100px;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+     position: relative;
+     border-radius: 2px;
+     background-color: #ffffff;
+     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),
+                 0 1px 2px 0 rgba(0,0,0,0.2);
+ }
+ 
+ .friend_name {
+     margin-left: 10px;
+     margin-right: 10px;
+     display: block;
+ }
+ 
+ .add_btn {
+     position: absolute;
+     right: 20px;
+     width: 100px;
+     cursor: pointer;
+ }
+ 
+ .dash_usr_empty {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+ }
+ 
+ 
+ 
