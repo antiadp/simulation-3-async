@@ -23,6 +23,8 @@ class Dashboard extends Component {
         axios.get('/auth/authenticated').then(user => {
             console.log('dashboard auth user', user)
             this.setState({ loggedUser: user.data })
+        }).catch(err => {
+            this.props.history.push('/')  
         })
         axios.get('/api/recommended').then(res => {
             console.log('where rec friends back from db')
@@ -62,6 +64,8 @@ class Dashboard extends Component {
             } 
         })
 
+        // console.log(recFriends.filter(person => person.hobby === 'Coding'))
+
         const listedBots = recommendedFiltered.map((user, i) => {
             //console.log(user)
             return (
@@ -74,7 +78,9 @@ class Dashboard extends Component {
                         <h3>{user.first}</h3>
                         <h3>{user.last}</h3>
                     </div>
+                    
                     <button className='add_btn orange-btn' onClick={() => this.addFriend(user.id)}> Add Friend </button>
+                
                 </div>
             )
         })
@@ -118,9 +124,17 @@ class Dashboard extends Component {
                                 </div>
 
                                 <div className='dash_rec_usr_p'>
-                                    <div className='dash_rec_usr_c'>
-                                        {listedBots}
-                                    </div>
+                                {
+                                    listedBots && listedBots.length > 0
+                                    ?   
+                                        <div className='dash_rec_usr_c'>
+                                            {listedBots}
+                                        </div>
+                                    :
+                                        <div className='dash_rec_usr_c'>
+                                            <span>No recommended users found</span>
+                                        </div>
+                                }
                                 </div>
                             </div>
                         </div>

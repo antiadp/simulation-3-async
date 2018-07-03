@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import axios from 'axios';
 import './Nav.css'
 
@@ -7,10 +7,15 @@ import HomeBtn from '../../Assets/home.png'
 import SearchBtn from '../../Assets/search.png'
 // import Logout from '../../Assets/logout.png'
 
-export default class Header extends Component {
+
+class Header extends Component {
 
     logout = () => {
-        axios.post("/logout");
+        console.log('logging out')
+        axios.post("/auth/logout")
+        .then(res => {
+            this.props.history.push('/')
+        });
     }
     
     render(){
@@ -28,15 +33,14 @@ export default class Header extends Component {
                         </Link>
                     </div>
                     <div className='middle-content'>
-                        <h5>{this.props.title}</h5> 
+                        <h5>{this.props.page}</h5> 
                     </div>
                     <div className='right-content'>
-                        <Link 
+                        <span 
                             className="link" 
-                            to="/" 
                             onClick={e => this.logout()}>
                             Logout 
-                        </Link>
+                        </span>
                     </div>
                 </div>
                
@@ -45,3 +49,5 @@ export default class Header extends Component {
         )
     }
 }
+
+export default withRouter(Header)

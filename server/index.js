@@ -48,7 +48,7 @@ passport.use(new Auth0Strategy({
     scope: 'openid profile'
 }, function(accessToken, refreshToken, extraParams, profile, done){
     const db = app.get('db')
-    console.log('auth0 strat before find_user')
+    // console.log('auth0 strat before find_user')
     db.find_user([profile.id]).then(userRes => {
         console.log("auth0 strat after find_user" )
         if(!userRes[0]) {
@@ -56,12 +56,12 @@ passport.use(new Auth0Strategy({
                 profile.name.givenName,
                 profile.name.familyName,
                 profile.user_id,
-                'https://robohash.org/me' 
+                `https://robohash.org/${profile.user_id}`
             ]).then(newUser => {
                 return done(null, newUser[0].id)
             })
         }else {
-            console.log('auth0 strat after find_user-- user found ')
+            // console.log('auth0 strat after find_user-- user found ')
             return done(null, userRes[0].id)
         }
     }).catch(err => {
@@ -71,7 +71,7 @@ passport.use(new Auth0Strategy({
 
 
 passport.serializeUser((profile, done) => {
-    console.log('serialize')
+    // console.log('serialize')
     done(null, profile);
 });
             // let user = {
@@ -82,10 +82,10 @@ passport.serializeUser((profile, done) => {
 
 passport.deserializeUser(function(user, done){
     const db = app.get('db')
-    console.log("deserialized")
+    // console.log("deserialized")
     // Attempt to find user in your Database (helousers table) using user.user_id
     db.find_session(user).then(res => {
-        console.log('deserialized: found sesh')
+        // console.log('deserialized: found sesh')
         done(null, res[0])
     }).catch(err => {
         console.log('deserialize error is:', err)
@@ -101,12 +101,17 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 
 app.get('/auth/authenticated', (req, res)=> {
     console.log('auth0 endpt check')
-    if (req.user) {
-        console.log('auth0 endpt user obj', req.user)
-        res.status(200).send(req.user)
+    if (req.isAuthenticated()) {
+        res.send(req.user)
     } else {
-        res.status(401).send('Couldnt Authenticate')
+        res.sendStatus(403)
     }
+    // if (req.user) {
+    //     console.log('auth0 endpt user obj', req.user)
+    //     res.status(200).send(req.user)
+    // } else {
+    //     res.status(401).send('Couldnt Authenticate')
+    // }
 })
 
 
@@ -117,6 +122,8 @@ app.get('/isRegistered', ctrl.isRegistered);
 app.get('/api/profile/list', ctrl.getProfileList)
 
 app.get('/isAuthenticated', isAuthenticated);
+
+app.get('/user/filter', ctrl.searchFilter);
 // app.get('/api/users/search', ctrl.allUsers);
 
 app.post('/friend/add', ctrl.addFriend)
@@ -124,7 +131,7 @@ app.post('/friend/delete', ctrl.deleteFriend)
 
 
 
-app.get('/auth/logout', ctrl.logout)
+app.post('/auth/logout', ctrl.logout)
 
 
 app.listen(SERVER_PORT, ()=> console.log(`Kicking the: ${SERVER_PORT}`));

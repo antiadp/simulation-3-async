@@ -78,8 +78,7 @@
  
  .dash_recommend_parent {
      width: 100%;
-     height: auto;
-     min-height: 200px;
+     min-height: 100vh;
      margin-top: 30px;
      display: flex;
      flex-direction: column;
@@ -121,7 +120,7 @@
  .dash_rec_usr_p {
      box-sizing: border-box;
      padding: 10px;
-     height: 600px;
+     min-height: 600px;
      width: 100%;
      display: block;
  }

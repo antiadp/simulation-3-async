@@ -25,22 +25,23 @@ export default class Profile extends Component {
     }
 
     componentDidMount() {
-        axios.get('/isAuthenticated').then(user => {
-            this.setState({ loggedUser: user.data })
-        })
-        axios.get('/api/getUser').then(res => {
+        axios.get('/auth/authenticated').then(res => {
             this.setState({
-                firstName: res.data[0].first,
-                lastName: res.data[0].last,
-                gender: res.data[0].gender,
-                hairColor: res.data[0].hair_color,
-                eyeColor: res.data[0].eye_color,
-                hobby: res.data[0].hobby,
-                bDate: res.data[0].bday_day,
-                bMonth: res.data[0].bday_month,
-                bYear: res.data[0].bday_year 
+                firstName: res.data.first,
+                lastName: res.data.last,
+                gender: res.data.gender,
+                hairColor: res.data.hair_color,
+                eyeColor: res.data.eye_color,
+                hobby: res.data.hobby,
+                bDate: res.data.bday_day,
+                bMonth: res.data.bday_month,
+                bYear: res.data.bday_year,
+                loggedUser: res.data
             })
-        }).catch(() => { this.props.history.push('/') })
+        }).catch(err => { 
+            console.log('booting user', err)
+            this.props.history.push('/') 
+        })
     }
 
     updateProfile() {

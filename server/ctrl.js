@@ -8,13 +8,8 @@ module.exports = {
         }
     },
     logout: (req, res) => {
-        req.session.destroy();
-        res.status(200).send(req.session);
-        console.log("session ended");
-        (req, res) => {
-            req.logOut();
-            res.redirect('http://localhost:3000/#/Auth')
-        }
+        req.logout();
+        res.sendStatus(200);
     },
     // allUsers: (req, res) => {
     //     console.log('the profile off auth0', req.session.passport)
@@ -76,6 +71,18 @@ module.exports = {
         db.get_profiles([req.user.id]).then(users => {
             console.log('got all the other user', users)
             res.status(200).send(users)
+        })
+    },
+    searchFilter: (req, res) => {
+        const db = req.app.get('db')
+        let { filter_column, filter_text } = req.query
+
+        filter_text = "%" + filter_text.slice(0) + "%"
+
+        console.log('filter_text', filter_text)
+
+        db.filter_first([filter_column, filter_text]).then( users =>{
+            res.send(users);
         })
     }
 }
