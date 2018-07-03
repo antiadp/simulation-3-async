@@ -65,7 +65,7 @@ passport.use(new Auth0Strategy({
             return done(null, userRes[0].id)
         }
     }).catch(err => {
-        console.log("auth0 strat error", err)
+        // console.log("auth0 strat error", err)
     })
 }));
 
@@ -129,9 +129,9 @@ app.get('/user/filter', ctrl.searchFilter);
 app.post('/friend/add', ctrl.addFriend)
 app.post('/friend/delete', ctrl.deleteFriend)
 
-
-
 app.post('/auth/logout', ctrl.logout)
 
+
+app.put('/api/profile/update', ctrl.updateUser);
 
 app.listen(SERVER_PORT, ()=> console.log(`Kicking the: ${SERVER_PORT}`));

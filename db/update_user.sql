@@ -5,7 +5,7 @@ SET first = $2,
     hair_color = $5, 
     eye_color = $6, 
     hobby =  $7, 
-    bday_date = $8, 
+    bday_day = $8, 
     bday_month = $9, 
     bday_year = $10
     

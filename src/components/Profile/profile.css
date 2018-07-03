@@ -1,43 +1,79 @@
-/* .main-profile {
+.profile_parent {
+    width: 100%;
+    height: 680px;
     display: flex;
-    flex-direction: row;
-} */
-.profile-content {
+    justify-content: center;
+  }
+  
+  .profile_child {
+      width: 80%;
+      min-width: 630px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .profile_usr_top {
+    width: 841px;
+    height: 146px;
+    box-sizing: border-box;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
-    border-radius: 2px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-                0 1px 2px 0 rgba(0, 0 ,0, 0.2);
-    padding: 0 10%;
-    margin: 0 20%;
-
-}
-.button-container  {
-    justify-content: right;
-    border-radius: 4px;
-    border-color: red;
-    border: 5px solid transparent;
-    margin: 0 20%;
-    width: auto;
-    position: absolute;
-
-}
-.profile-body {
-    display: flex;
-    flex-direction: row;
-    border-radius: 2px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-                0 1px 2px 0 rgba(0, 0 ,0, 0.2);
-    padding: 5% 10%;
-    margin: 0 20%;
-    margin-top: 20px;
-}
-.left-body {
-    width: 
-}
-.button-div {
-    flex-direction: row;
-    justify-content: right;
-}
+    align-items: center;
+    position: relative;
+  }
+  
+  .profile_img {
+      width: 120px;
+      border: 3px solid #FF9770;
+  }
+  
+  .usernamebox {
+      margin-left: 147px;
+      position: relative;
+      font-size: 20px;
+  }
+  
+  .usr_btns {
+      width: auto;
+      position: absolute;
+      right: 0px;
+  }
+  
+  .profile_btn {
+      width: 100px;
+      font-size: 14px;
+      margin-right: 20px;
+  }
+  
+  .profile_bottom {
+     margin-top: 30px;
+     width: 841px;
+     height: 450px;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+  }
+  
+  .profile_bottom_child {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+  
+  }
+  
+  .input {
+      border: 1px solid #FF9770;
+      font-size: 20px;
+      box-sizing: border-box;
+      padding: 6px;
+      margin-bottom: 10px;
+  }
+  
+  .select {
+      width: 225px;
+      font-size: 20px;
+      margin-bottom: 10px;
+  }

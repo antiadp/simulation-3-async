@@ -106,7 +106,7 @@ class Search extends Component {
                 this.setState({ allProfiles: res.data })
             })
         }).catch(response => {
-            console.log('friends forever sorry')
+            console.log("friend removal error")
         })
     }
 
@@ -141,7 +141,7 @@ class Search extends Component {
             if (users.first.toLowerCase() === this.state.searchResults && this.state.search === 'first') {
                 return (
                     <div key={index} className='profile_content content-container'>
-                        <img src={`${users.img}`} width='100px' alt='profile' />
+                        <img src={`${users.img}`}  alt='profile' />
                         <div classNames='profile_name'>
                             {users.first}
                             <br />
@@ -174,23 +174,7 @@ class Search extends Component {
             }
         })
 
-        let pageNumbers = [];
 
-        for (let i = 1; i <= Math.ceil(allProfiles.length / usersPerPage); i++) {
-            pageNumbers.push(i)
-        }
-
-        const showPages = pageNumbers.map(number => {
-            return (
-                <li
-                    key={number}
-                    id={number}
-                    onClick={this.handlePageClick}
-                >
-                    {number}
-                </li>
-            )
-        })
 
         return (
 
@@ -212,11 +196,7 @@ class Search extends Component {
                         <div className='child_bottom'>
                             {profilesMap}
                         </div>
-                        <div className='pages_div'>
-                            <div className='numbers_div'>
-                                {showPages}
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
 

@@ -112,14 +112,13 @@ class Dashboard extends Component {
                                     <span className='recommend_span_h open-sans'>Recommended Friends</span>
                                     <span className='recommend_span_s open-sans'>Sorted by</span>
                                     <select className='dash_select open-sans' onChange={(e) => this.setState({ sort: e.target.value })} >
-                                        <option value={''}>------------</option>
+                                        <option value={''}> ----- </option>
                                         <option value='first'> First Name </option>
                                         <option value='last'> Last Name </option>
                                         <option value='gender'> Gender </option>
                                         <option value='hobby'> Hobby </option>
                                         <option value='hair_color'> Hair Color </option>
                                         <option value='eye_color'> Eye Color </option>
-                                        <option value='birthday'> Birthday </option>
                                     </select>
                                 </div>
 
